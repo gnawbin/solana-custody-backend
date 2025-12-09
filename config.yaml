@@ -1,0 +1,16 @@
+# config.yaml
+environment: "devnet"  # devnet / testnet / mainnet
+
+rpc:
+  devnet: "https://api.devnet.solana.com"
+  testnet: "https://api.testnet.solana.com"
+  mainnet: "https://api.mainnet-beta.solana.com"
+
+database_url: "postgres://postgres:password@localhost/custody"
+
+encryption_key: "0123456789abcdef0123456789abcdef"  # 32字节 = 256位，放环境变量更安全
+
+treasury_secret_key_base58: "your_treasury_base58_private_key_here"  # 空投资金钱包
+token账户要有钱
+
+signer_service_url: "http://127.0.0.1:50051"

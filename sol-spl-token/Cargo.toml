@@ -12,8 +12,7 @@ solana-client = { workspace = true }
 solana-program = { workspace = true }
 spl-token = { workspace = true }
 spl-associated-token-account = { workspace = true }
-anchor-lang = { version = "0.30", optional = true }
-anchor-spl = { version = "0.30", optional = true }
+
 bs58 = { workspace = true }
 serde = { workspace = true, features = ["derive"] }
 serde_json = { workspace = true }
@@ -22,10 +21,18 @@ anyhow = { workspace = true }
 tracing = { workspace = true }
 async-trait = { workspace = true }
 envy = { workspace = true }
+[lib]
+crate-type = ["cdylib", "lib"]
 
 [features]
-default = []
-anchor = ["anchor-lang", "anchor-spl"]
+custom-heap = []
+custom-panic = []
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }
+
+
+
 
 [dev-dependencies]
 tokio = { workspace = true, features = ["full", "test-util"] }

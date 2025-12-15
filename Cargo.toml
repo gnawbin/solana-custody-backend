@@ -154,11 +154,11 @@ bson = "3.0.0"                                                   # BSON 序列�
 # =========================================
 # Solana 区块链相关依赖
 # =========================================
-solana-sdk = "2.0"                                              # Solana SDK
-solana-client = "2.0"                                           # Solana RPC客户端
-solana-program = "2.0"                                          # Solana程序库
-spl-token = { version = "5.0", features = ["no-entrypoint"] }   # SPL Token库
-spl-associated-token-account = "2.0"                            # 关联Token账户
+solana-sdk = "3.0.0"                                              # Solana SDK
+solana-client = "3.1.4"                                           # Solana RPC客户端
+solana-program = "3.0.0"                                          # Solana程序库
+spl-token = { version = "9.0.0", features = ["no-entrypoint"] }   # SPL Token库
+spl-associated-token-account = "8.0.0"                            # 关联Token账户
 bs58 = "0.5.1"                                                    # Base58编码
 
 # =========================================
@@ -169,9 +169,9 @@ askama = "0.14.0"                                                 # 类型安全
 askama_derive = { version = "0.14.0"}                                          # askama 的派生宏支持
 convert_case = "0.10.0"                                            # 字符串命名风格转换工具
 
-aws-config = "1.8.0"
-aws-sdk-config = "1.89.0"
-aws-sdk-s3 = { version = "1.105.0", features = ["behavior-version-latest"] }
+aws-config = "1.8.12"
+aws-sdk-config = "1.90.0"
+aws-sdk-s3 = { version = "1.106.0", features = ["behavior-version-latest"] }
 
 #linfa="0.7.1"
 #linfa-linear = "0.7.1"

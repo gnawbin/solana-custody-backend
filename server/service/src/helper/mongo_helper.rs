@@ -20,7 +20,7 @@ pub async fn get_primary_client() -> Result<Client, AppError> {
         .read()
         .await
         .clone()
-        .ok_or_else(|| AppError {
+        .ok_or_else(|| 0AppError {
             code: 500,
             message: "Primary MongoDB not initialized".to_string(),
         })?;

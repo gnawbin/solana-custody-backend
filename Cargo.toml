@@ -4,6 +4,7 @@ members = ["server/api",
     "sea-orm-adapter",
     "xdb",
     "migration",
+    "sol-spl-token",
     "server/api", "server/config", "server/core", "server/global", "server/initialize", "server/middleware", "server/model", "server/resource", "server/router", "server/service", "server/utils", "server/bin", "server/constant", "server/shared",
 ]
 exclude = []
@@ -43,7 +44,7 @@ futures = "0.3"                                                 # futures 库，
 # =========================================
 # 相关的 HTTP 库
 axum = "0.8.4"                                                    # Web 框架，建立在 hyper 之上
-axum-extra = "0.10"                                             # axum 的扩展
+axum-extra = "0.12.2"                                             # axum 的扩展
 tower = "0.5.2"                                                   # Tower 中间件库，axum 和其他库使用
 tower-http = "0.6"                                              # HTTP 相关的 Tower 中间件
 tower-layer = "0.3"                                             # 用于构建 Tower 中间件层
@@ -65,7 +66,7 @@ utoipa-gen = {version = "5.4.0"}
 # =========================================
 # JWT和身份认证
 # =========================================
-jsonwebtoken = "9.3"                                            # JSON Web Token (JWT) 库
+jsonwebtoken = "10.2.0"                                            # JSON Web Token (JWT) 库
 
 # =========================================
 # Casbin和授权相关（中间层）
@@ -76,7 +77,7 @@ casbin = { version = "2.10", default-features = false }         # 角色访问�
 # 数据库 ORM 和适配器（底层数据库操作）
 # =========================================
 sea-orm = { version = "1.1", default-features = false, features = ["runtime-tokio-native-tls", "macros"] }         # SeaORM，Rust 的 ORM 框架
-redis = "0.32"
+redis = "1.0.1"
 
 # =========================================
 # 测试相关依赖（用于测试）
@@ -151,20 +152,38 @@ mongodb = "3.3.0"                                                 # MongoDB 驱�
 bson = "3.0.0"                                                   # BSON 序列化和反序列化库
 
 # =========================================
+# Solana 区块链相关依赖
+# =========================================
+solana-sdk = "2.0"                                              # Solana SDK
+solana-client = "2.0"                                           # Solana RPC客户端
+solana-program = "2.0"                                          # Solana程序库
+spl-token = { version = "5.0", features = ["no-entrypoint"] }   # SPL Token库
+spl-associated-token-account = "2.0"                            # 关联Token账户
+bs58 = "0.5.1"                                                    # Base58编码
+
+# =========================================
 # other
 # =========================================
 anyhow = "1.0"                                                  # 错误处理库，提供 Result 类型和错误转换
 askama = "0.14.0"                                                 # 类型安全的编译时模板引擎
 askama_derive = { version = "0.14.0"}                                          # askama 的派生宏支持
-convert_case = "0.8"                                            # 字符串命名风格转换工具
+convert_case = "0.10.0"                                            # 字符串命名风格转换工具
 
-aws-config = "1.8.6"
+aws-config = "1.8.0"
 aws-sdk-config = "1.89.0"
-aws-sdk-s3 = { version = "1.106.0", features = ["behavior-version-latest"] }
+aws-sdk-s3 = { version = "1.105.0", features = ["behavior-version-latest"] }
 
 #linfa="0.7.1"
 #linfa-linear = "0.7.1"
 #ndarray = "0.16.1"
 tonic="0.14.2"
+
+opentelemetry-otlp = { version = "0.31.0", features = ["grpc-tonic"] }
+opentelemetry = {version="0.31.0",features=["trace", "metrics"]} # 核心库
+opentelemetry_sdk = "0.31.0"
+# 选择相应的 Exporter，例如 Jaeger 或 Prometheus
+opentelemetry-jaeger = "0.22.0" # Jaeger Exporter
+opentelemetry-prometheus = "0.29.1" # Prometheus Exporter
+opentelemetry-stdout = "0.31.0" # Stdout Exporter for tracing
 #duckdb = { version = "1.4.0", features = ["bundled"] }
 #polars = { version = "0.51.0", features = ["lazy","dtype-struct", "json"] }

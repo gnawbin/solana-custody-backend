@@ -1,0 +1,33 @@
+[package]
+name = "sol-spl-token"
+version = "0.1.0"
+edition = "2021"
+authors = ["wang1571339199@outlook.com"]
+publish = false
+
+[dependencies]
+tokio = { workspace = true, features = ["full"] }
+solana-sdk = { workspace = true }
+solana-client = { workspace = true }
+solana-program = { workspace = true }
+spl-token = { workspace = true }
+spl-associated-token-account = { workspace = true }
+anchor-lang = { version = "0.30", optional = true }
+anchor-spl = { version = "0.30", optional = true }
+bs58 = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+async-trait = { workspace = true }
+envy = { workspace = true }
+
+[features]
+default = []
+anchor = ["anchor-lang", "anchor-spl"]
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["full", "test-util"] }
+solana-program-test = "2.0"
+solana-sdk = { workspace = true }

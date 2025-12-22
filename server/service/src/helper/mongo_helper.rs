@@ -19,11 +19,11 @@ pub async fn get_primary_client() -> Result<Client, AppError> {
     let client = GLOBAL_PRIMARY_MONGO
         .read()
         .await
-        .clone()
-        .ok_or_else(|| 0AppError {
-            code: 500,
-            message: "Primary MongoDB not initialized".to_string(),
-        })?;
+        .clone().ok_or_else(||OAppError)?;
+      //  .ok_or_else(|| 0AppError {
+       //     code: 500,
+       //#     message: "Primary MongoDB not initialized".to_string(),
+      //})?;
     Ok(client.as_ref().clone())
 }
 

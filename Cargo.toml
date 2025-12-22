@@ -66,7 +66,7 @@ utoipa-gen = {version = "5.4.0"}
 # =========================================
 # JWT和身份认证
 # =========================================
-jsonwebtoken = "10.2.0"                                            # JSON Web Token (JWT) 库
+jsonwebtoken = { version = "10.2.0", features = ["aws_lc_rs"] }    # JSON Web Token (JWT) 库
 
 # =========================================
 # Casbin和授权相关（中间层）
@@ -77,7 +77,7 @@ casbin = { version = "2.10", default-features = false }         # 角色访问�
 # 数据库 ORM 和适配器（底层数据库操作）
 # =========================================
 sea-orm = { version = "1.1", default-features = false, features = ["runtime-tokio-native-tls", "macros"] }         # SeaORM，Rust 的 ORM 框架
-redis = "1.0.1"
+redis = "0.32.7"
 
 # =========================================
 # 测试相关依赖（用于测试）
